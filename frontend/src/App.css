@@ -1,0 +1,378 @@
+.landingPageContainer {
+  width: 100vw;
+  height: 100vh;
+  background: url("/public/background.jpg");
+  /* background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
+  background-size: 100% auto;
+  /* Width 100%, height auto */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  color: whitesmoke;
+}
+
+.landingPageContainer nav {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 0.8rem;
+  padding-block: 1.6rem;
+  align-items: center;
+  background-color: #383D3B;
+  border-radius: 3px;
+  height: 5rem;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.landingPageContainer nav h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #D97500;
+}
+
+.landingPageContainer nav h4 {
+  font-weight: bold;
+}
+
+.landingPageContainer nav .navList {
+  display: flex;
+  gap: 2rem;
+  cursor: pointer;
+}
+
+.landingPageContainer nav .navList p,
+.landingPageContainer nav .navList div[role="button"] {
+  position: relative;
+  margin: 0;
+  padding: 8px 0;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Remove default button styles from the div */
+.landingPageContainer nav .navList div[role="button"] {
+  all: unset;
+  display: contents;
+}
+
+/* Hover effect for both */
+.landingPageContainer nav .navList p:hover,
+.landingPageContainer nav .navList div[role="button"]:hover p {
+  color: #D97500;
+}
+
+.landingPageContainer nav .navList p::after,
+.landingPageContainer nav .navList div[role="button"] p::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #D97500;
+  transition: width 0.3s ease;
+}
+
+.landingPageContainer nav .navList p:hover::after,
+.landingPageContainer nav .navList div[role="button"]:hover p::after {
+  width: 100%;
+}
+
+
+.landingMainContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 3rem;
+  height: 80vh;
+  align-items: center;
+}
+
+.landingMainContainer>div:nth-child(1) {
+  font-size: 1.8rem;
+  width: 60%;
+}
+
+.landingMainContainer>div:nth-child(1) div[role='button'] {
+  background-color: #D97500;
+  width: fit-content;
+  padding: 0.3rem;
+  border-radius: 0.7rem;
+  margin-top: 1rem;
+  padding-bottom: 0.8rem;
+  height: fit-content;
+}
+
+.landingMainContainer>div:nth-child(1) div[role='button'] a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.landingMainContainer>div:nth-child(2) img {
+  height: 75vh;
+  width: auto;
+}
+
+.landingMainContainer>div:nth-child(2) {
+  width: 35%;
+
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 20px;
+  text-align: center;
+  background-color: #d9d9d9;
+  height: 4rem;
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.meetContainer {
+  display: flex;
+  padding-inline: 20px;
+  height: 80vh;
+  gap: 10vw;
+  justify-content: center;
+}
+
+
+
+.leftPanel {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+}
+
+.rightPanel {
+  display: flex;
+  align-items: center;
+}
+
+.rightPanel>img {
+  width: 30vw;
+  height: auto;
+  border-radius: 20px;
+}
+
+.homeOptions>button {
+  border: 2px solid #FF9838;
+  margin-left: 2rem;
+}
+
+
+.homeHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  margin: 2rem;
+}
+
+.leftPart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.rightPart {
+  width: 100vw;
+  top: 50%;
+  left: 0;
+  position: fixed;
+  height: auto;
+  /* aspect-ratio: 16 / 9; */
+  border-radius: 8px;
+}
+
+
+.rightPart .video {
+  object-fit: contain;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+@media (max-width: 1320px) {
+  .landingMainContainer>div:nth-child(2) img {
+    height: 50vh;
+    width: auto;
+  }
+}
+
+/* Mobile Responsive Styles*/
+@media (max-width: 768px) {
+
+  .rightPart {
+    width: 100vw;
+    top: 40%;
+    left: 0;
+    position: fixed;
+    height: auto;
+    /* aspect-ratio: 16 / 9; */
+    border-radius: 8px;
+  }
+
+  .landingPageContainer {
+    height: auto;
+    min-height: 100vh;
+    background-position: top center;
+    background-size: cover;
+    padding-bottom: 2rem;
+  }
+
+  /* Navigation - Mobile  */
+  .landingPageContainer nav {
+    flex-direction: row;
+    height: auto;
+    padding: 1rem;
+    gap: 1rem;
+    align-items: center;
+    border-radius: 0;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .landingPageContainer nav h2 {
+    font-size: 1.8rem;
+    margin-right: auto;
+  }
+
+  .landingPageContainer nav .navList {
+    flex-direction: row;
+    gap: 1rem;
+    width: auto;
+  }
+
+  .landingPageContainer nav .navList p,
+  .landingPageContainer nav .navList div[role="button"] {
+    width: auto;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  /* Main Content - Mobile */
+  .landingMainContainer {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    height: auto;
+    gap: 3rem;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .landingMainContainer>div:nth-child(1) {
+    width: 100%;
+    font-size: 1.4rem;
+    order: 2;
+  }
+
+  .landingMainContainer>div:nth-child(1) div[role='button'] {
+    margin: 1.5rem auto 0;
+    padding: 0.8rem 1.5rem;
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .landingMainContainer>div:nth-child(2) {
+    width: 100%;
+    order: 1;
+    padding-left: 5rem;
+  }
+
+  .landingMainContainer>div:nth-child(2) img {
+    height: auto;
+    max-height: 50vh;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 1rem;
+  }
+
+  /* Meet Container - Mobile */
+  .meetContainer {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 3rem;
+    height: 100vh;
+  }
+
+  .leftPanel,
+  .rightPanel {
+    width: 100%;
+  }
+
+  .leftPanel {
+    height: 20vh;
+  }
+
+  .rightPanel {}
+
+  .rightPanel>img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .landingPageContainer nav {
+    padding: 0.8rem;
+  }
+
+  .landingPageContainer nav h2 {
+    font-size: 1.5rem;
+  }
+
+  .landingPageContainer nav .navList {
+    gap: 0.5rem;
+  }
+
+  .landingPageContainer nav .navList p,
+  .landingPageContainer nav .navList div[role="button"] {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .landingMainContainer>div:nth-child(1) {
+    font-size: 1.2rem;
+  }
+
+  .landingMainContainer>div:nth-child(1) div[role='button'] a {
+    font-size: 1.1rem;
+  }
+}
+
+/* Very Small Screens  */
+@media (max-width: 360px) {
+  .landingPageContainer nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .landingPageContainer nav .navList {
+    width: 100%;
+    justify-content: center;
+  }
+}
